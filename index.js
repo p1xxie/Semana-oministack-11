@@ -2,9 +2,13 @@ const  express = require('express');
 
 const app = express();
 
-app.get('/') , (request, response) >{
+app.get('/' , (request, Response) > {
 
-    return response.send('Hello Word')
-});
+
+    return Response.json({
+        evento: 'Semana OminiStack 11.0',
+        aluno: 'Gustavo Xavier'  
+})
+}); 
 
 app.listen(3333);
