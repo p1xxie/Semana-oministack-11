@@ -1,17 +1,26 @@
 const express = require('express');
 
+const OngController =require('./controllers/OngController');
+const IncidentController = require('./controllers/IncidentController');
+const ProfileController = require('./controllers/ProfileController');
+const SessionController = require('./controllers/SessionController');
+
 const routes = express.Router();
 
-routes.post('/users' , (Request, Response) => {
-    const body = Request.body;
+// routes.get('/ongs',async (Request, Response) => {
+//     const ongs = await connection('ongs').select('*');
 
-    Console.log(body);
+//     return Response.json(ongs);
+// });
 
+routes.post('/sessions',SessionController.create);
 
-    return Response.json({
-        evento: 'Semana OminiStack 11.0',
-        aluno: 'Gustavo Xavier'  
-});
-}); 
+routes.get('/ongs' , OngController.index);
+routes.post('/ongs' , OngController.create);  
 
+routes.get('/incidents',IncidentController.create);
+routes.post('/incidents',IncidentController.create);
+routes.delete('/incidents/id', IncidentController.delete);
+    
+   
 module.exports=routes;
