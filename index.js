@@ -2,7 +2,24 @@ const  express = require('express');
 
 const app = express();
 
-app.get('/' , (request, Response) > {
+app.use(express.json());
+/** 
+ * Rota /Recurso 
+*/
+
+/** 
+ * Metodos HTTP
+*/
+/**
+ *  Tipos de Parametros
+ * 
+ *  Query:
+ */
+
+app.post('/users/' , (Request, Response) => {
+    const body = Request.body;
+
+    Console.log(body);
 
 
     return Response.json({
