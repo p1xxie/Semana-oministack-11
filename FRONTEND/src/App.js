@@ -1,11 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import './global.css';
+import Logon from './pages/Logon';
+
+
+
+
+
 
 function App() {
+
   return (
-    <h1>Hello World</h1>
+   <Logon />
+   
   );
 }
 
 export default App;
+
